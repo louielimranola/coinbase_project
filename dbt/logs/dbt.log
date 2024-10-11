@@ -1,0 +1,57 @@
+[0m15:29:49.874166 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a4f5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b2dc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b2d100>]}
+
+
+============================== 15:29:49.877157 | 897a2309-198e-46b5-8acb-6dbc03c08331 ==============================
+[0m15:29:49.877157 [info ] [MainThread]: Running with dbt=1.8.7
+[0m15:29:49.877490 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/louielim/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:29:49.884436 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/louielim/.dbt')}
+[0m15:29:49.884754 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m15:30:09.776859 [debug] [MainThread]: Starter project path: /Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/include/starter_project
+[0m15:30:09.789403 [info ] [MainThread]: 
+Your new dbt project "coinbase_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:30:09.790686 [info ] [MainThread]: Setting up your profile.
+[0m15:30:19.556170 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m15:30:19.556747 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m15:35:08.954708 [error] [MainThread]: Encountered an error:
+
+[0m15:35:08.979981 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/task/init.py", line 180, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/task/init.py", line 164, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/dbt/task/init.py", line 130, in generate_target_from_input
+    target[key] = click.prompt(
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/Users/louielim/Documents/coinbase_project/env/lib/python3.9/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m15:35:08.982321 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 319.15573, "process_user_time": 0.875316, "process_kernel_time": 0.238898, "process_mem_max_rss": "87080960", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:35:08.982948 [debug] [MainThread]: Command `dbt init` failed at 15:35:08.982846 after 319.16 seconds
+[0m15:35:08.983350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a4f5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069bcbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b72220>]}
+[0m15:35:08.983650 [debug] [MainThread]: Flushing usage events
